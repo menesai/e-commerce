@@ -7,32 +7,32 @@ class Directory extends Component {
         super()
         this.state={
             section:[{
-                title: 'hats',
-                imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+                title: 'HATS',
+                imageUrl: 'https://static.zumiez.com/skin/frontend/delorum/default/images/Brixton-hats-assorted-yellow-black-061719-444x500.jpg',
                 id: 1,
-                linkUrl: 'shop/hats'
+                linkUrl: 'hats'
               },
               {
-                title: 'jackets',
-                imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
+                title: 'JACKETS',
+                imageUrl: 'https://www.pacsun.com/dw/image/v2/AAJE_PRD/on/demandware.static/-/Sites-pacsun-Library/default/dwf7942b4a/2019/floorsets/08/01/mens2.jpg?sw=978',
                 id: 2,
                 linkUrl: 'shop/jackets'
               },
               {
-                title: 'sneakers',
+                title: 'SNEAKERS',
                 imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
                 id: 3,
                 linkUrl: 'shop/sneakers'
               },
               {
-                title: 'womens',
+                title: 'WOMENS',
                 imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
                 size: 'large',
                 id: 4,
                 linkUrl: 'shop/womens'
               },
               {
-                title: 'mens',
+                title: 'MENS',
                 imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
                 size: 'large',
                 id: 5,
@@ -41,17 +41,18 @@ class Directory extends Component {
         }
     }
 
+    passInfo = (section) => section.map(({id, ...sectionProps}) =>(
+      <MenuItem key={id} {...sectionProps}/>
+    ))
+    
+
 
 
     render() {
-        const passInfo = this.state.section.map(({title, imageUrl, id}) => {
-            return (
-                <MenuItem key={id} title={title}/>
-            )
-        })
-        return (
+      const {section}=this.state
+      return (
             <div className='directory-menu'>
-                {passInfo}
+                {this.passInfo(section)}
             </div>
         )
     }
