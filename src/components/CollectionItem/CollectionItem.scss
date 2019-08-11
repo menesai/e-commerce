@@ -1,0 +1,21 @@
+.collection-item{
+    // border: solid 1px red;
+    width: 22%;
+    height: 40vh;
+    border-radius: 5px;
+
+    .image{
+        height: 100%;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+        border-radius: 5px;
+        margin-bottom: 7px;
+    }
+
+    .collection-footer{
+        // border: solid 1px red;
+        display: flex;
+        justify-content: space-between;
+    }
+}

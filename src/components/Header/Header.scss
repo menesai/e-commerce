@@ -1,0 +1,27 @@
+.logo-container, .option{
+    color: white;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.header{
+    background-color: black;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .logo-container{
+        // border: 1px blue solid;
+        margin-left: 5vw
+    }
+
+    .logo-container1{
+        width: 60%;
+        // border: 1px red solid
+    }
+    .option{
+        padding: 10px 12px
+    }
+}

@@ -1,0 +1,25 @@
+.signIn{
+    // border: solid 1px red;
+    display: flex;
+    height: 90vh;
+    justify-content: space-around;
+    align-items: center;
+    // justify-content: center;
+    background-color: lightslategrey;
+    
+
+    .SignInForm{
+        border: solid 1px red;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30%;
+        height: 50vh;
+
+    }
+
+    .provider{
+        border: solid rgb(8, 8, 139) 1px;
+        height: 60vh;
+    }
+}
