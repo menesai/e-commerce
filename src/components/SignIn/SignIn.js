@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import './SignIn.scss'
+import {Form, Header, Button, Icon} from 'semantic-ui-react'
+import {Link} from 'react-router-dom';
 import firebase from '../../firebase';
 
 class SignIn extends Component {
@@ -27,13 +29,15 @@ class SignIn extends Component {
         return (
             <div className='signIn'>
 
-                <form className='SignInForm' onSubmit={this.handleForm}>
-                    {/* <div>
-                        <h2>I already have an account</h2>
-                        <span>Sign In with your email and password</span>
-                    </div> */}
+                <Form size='small' className='SignInForm' onSubmit={this.handleForm} style={{maxWidth: 450}}>
+                   <Header as='h2' color='blue' textAlign='center'>
+                    <Icon name='shopping bag' color='black' size='small'/>
+                        Sign in with your email
+                   </Header>
 
-                    <input
+                    <Form.Input
+                    icon='user'
+                    iconPosition='left'
                     name='email'
                     type='email'
                     placeholder='enter email'
@@ -42,7 +46,9 @@ class SignIn extends Component {
                     onChange={this.handleChange}
                     />
                      {/* <label>Email</label> */}
-                    <input
+                    <Form.Input
+                    icon='lock'
+                    iconPosition='left'
                     name='password'
                     type='password'
                     placeholder='enter password'
@@ -50,9 +56,12 @@ class SignIn extends Component {
                     required
                     onChange={this.handleChange}
                     />
-                     {/* <label>Password</label> */}
-                     <input type='submit' value='Submit'/>
-                </form>
+
+                     <Button type='submit' value='Submit' color='blue'>Login</Button>
+                        <div className='register-message'>
+                            <label className='register-link'>Don't have an Account? <Link to='#'> click here</Link></label>
+                        </div>
+                </Form>
 
                 <div className='provider'>
                     google, facebook, github, login

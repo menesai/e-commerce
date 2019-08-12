@@ -5,21 +5,38 @@
     justify-content: space-around;
     align-items: center;
     // justify-content: center;
-    background-color: lightslategrey;
+    background-color: rgb(192, 205, 218);
     
 
     .SignInForm{
-        border: solid 1px red;
+        // border: solid .5px rgb(255, 144, 144);
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        width: 30%;
-        height: 50vh;
+        justify-content: center;
+        // justify-content: space-around;
+        width: 35%;
+        height: 44vh;
 
     }
 
     .provider{
-        border: solid rgb(8, 8, 139) 1px;
+        // border: solid rgb(8, 8, 139) 1px;
         height: 60vh;
     }
+
+    .register-message{
+        // border: solid 1px yellow;
+        height: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        .register-link{
+            text-align: center;
+            background-color: rgb(233, 233, 233);
+            border-radius: 5px;
+            padding: 5px;
+        }
+    }
+
 }
