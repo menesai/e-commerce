@@ -13,7 +13,8 @@ const uiConfig = {
     // We will display Google and Facebook as auth providers.
     signInOptions: [
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-      firebase.auth.FacebookAuthProvider.PROVIDER_ID
+      firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+      firebase.auth.TwitterAuthProvider.PROVIDER_ID,
     ],
     callbacks: {
         // Avoid redirects after sign-in.
@@ -33,6 +34,7 @@ class SignIn extends Component {
 
     handleForm = (e) => {
         e.preventDefault();
+        
 
         this.setState({email: '', password: ''})
     }
@@ -54,7 +56,6 @@ class SignIn extends Component {
         if(!this.state.logged){
             return (
                 <div className='signIn'>
-    
                     <Form size='small' className='SignInForm' onSubmit={this.handleForm} style={{maxWidth: 450}}>
                        <Header as='h2' color='blue' textAlign='center'>
                         <Icon name='shopping bag' color='black' size='small'/>
@@ -88,9 +89,10 @@ class SignIn extends Component {
                                 <label className='register-link'>Don't have an Account? <Link to='#'> click here</Link></label>
                             </div>
                     </Form>
+                    
     
                     <div className='provider'>
-                        <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()}>
+                        <StyledFirebaseAuth uiCallback={ui => ui.disableAutoSignIn()} uiConfig={uiConfig} firebaseAuth={firebase.auth()}>
     
                         </StyledFirebaseAuth>
                     </div>
@@ -100,7 +102,7 @@ class SignIn extends Component {
         } else{
             return(
                 <div>
-                    your signed in
+                    <h1>welcome {firebase.auth().currentUser.displayName}</h1>
                     <button onClick={() => firebase.auth().signOut()}>log out</button>
                 </div>
             )
@@ -109,3 +111,4 @@ class SignIn extends Component {
 }
 
 export default SignIn;
+

@@ -3,6 +3,8 @@ import 'firebase/auth';
 import 'firebase/firestore';
 import 'firebase/storage'
 
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyBZZKLUHg503gFmXy-UPxllq68PktG5Fs4",
     authDomain: "ecomerce-6cad7.firebaseapp.com",
@@ -14,6 +16,8 @@ const firebaseConfig = {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+
+
 
    export const auth = firebase.auth();
    export const firestore = firebase.firestore();
