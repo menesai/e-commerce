@@ -28,7 +28,6 @@ class SignIn extends Component {
         this.state={
             email: '',
             password: '',
-            logged: false
         }
     }
 
@@ -43,17 +42,12 @@ class SignIn extends Component {
         this.setState({[e.target.name]: e.target.value})
     }
 
-    componentDidMount(){
-        firebase.auth().onAuthStateChanged(user =>{
-            this.setState({logged:!!user})
-        })
-    }
+  
 
 
     render() {
-        console.log(firebase.auth().currentUser)
+        // console.log(firebase.auth().currentUser)
         const {email, password}=this.state
-        if(!this.state.logged){
             return (
                 <div className='signIn'>
                     <Form size='small' className='SignInForm' onSubmit={this.handleForm} style={{maxWidth: 450}}>
@@ -98,15 +92,6 @@ class SignIn extends Component {
                     </div>
                 </div>
             )
-
-        } else{
-            return(
-                <div>
-                    <h1>welcome {firebase.auth().currentUser.displayName}</h1>
-                    <button onClick={() => firebase.auth().signOut()}>log out</button>
-                </div>
-            )
-        }
     }
 }
 
