@@ -80,15 +80,20 @@ class SignIn extends Component {
     
                          <Button type='submit' value='Submit' color='blue'>Login</Button>
                             <div className='register-message'>
-                                <label className='register-link'>Don't have an Account? <Link to='#'> click here</Link></label>
+                                <label className='register-link'>Don't have an Account? <Link to='/register'>create one here</Link></label>
                             </div>
                     </Form>
                     
     
                     <div className='provider'>
-                        <StyledFirebaseAuth uiCallback={ui => ui.disableAutoSignIn()} uiConfig={uiConfig} firebaseAuth={firebase.auth()}>
-    
-                        </StyledFirebaseAuth>
+                        <div style={{'textAlign': 'center'}}>
+                            <h3>Sign In With...</h3>
+                        </div>
+
+                        <StyledFirebaseAuth 
+                        uiCallback={ui => ui.disableAutoSignIn()} 
+                        uiConfig={uiConfig} 
+                        firebaseAuth={firebase.auth()}/>
                     </div>
                 </div>
             )
