@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './Register.scss'
 import {auth, userDocument} from '../../firebase';
+import {Form, Button} from 'semantic-ui-react'
 
 export class Register extends Component {
     constructor(){
@@ -24,7 +25,7 @@ export class Register extends Component {
     }
 
         try{
-            const {user} = auth.createUserWithEmailAndPassword(email, password)
+            const {user} = await auth.createUserWithEmailAndPassword(email, password)
 
             await userDocument(user, {displayName})
 
@@ -48,39 +49,54 @@ export class Register extends Component {
         const {displayName, email, password, confirmPassword} =this.state;
         return (
             <div className='register'>
-                <h2>Register</h2>
 
-                <form className='register-form' onSubmit={this.handleSubmit}>
-                    <input
+                <Form className='register-form' onSubmit={this.handleSubmit}>
+                <h2>Register</h2>
+                    <Form.Input
                         type='text'
                         onChange={this.handleChange}
                         name='displayName'
+                        icon='user outline'
+                        iconPosition='left'
                         value={displayName}
                         placeholder='Name'
+                        required
                     />
-                    <input
+                    <Form.Input
                         type='email'
                         onChange={this.handleChange}
                         name='email'
+                        icon='mail'
+                        iconPosition='left'
                         value={email}
                         placeholder='Email'
+                        required
                     />
-                    <input
+                    <Form.Input
                         type='password'
                         onChange={this.handleChange}
                         name='password'
                         value={password}
                         placeholder='Password'
+                        required
+                        icon='lock'
+                        iconPosition='left'
                     />
-                    <input
+                    <Form.Input
                         type='password'
                         onChange={this.handleChange}
                         name='confirmPassword'
                         value={confirmPassword}
                         placeholder='Re-enter Password'
+                        required
+                        icon='redo'
+                        iconPosition='left'
                     />
-                    <input type='submit'/>
-                </form>
+                    <Button color='linkedin' type='submit'>Submit</Button>
+                </Form>
+                <div className='meta-data' >
+                    {/* <img src='' alt='shopping'/> */}
+                </div>
             
             </div>
         )

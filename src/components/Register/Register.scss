@@ -1,8 +1,37 @@
 .register{
-    
+    // border:solid red 1px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 90vh;
+    padding: 20px;
+    // padding: 0 20px 0 20px;
+    background: linear-gradient(to bottom right, rgb(100, 100, 223), rgb(248, 204, 212));
+
     .register-form{
-        width: 50%;
+        text-align: center;
+        margin-top: 10vh;
+        justify-content: center;
+        align-content: center;
+        background-color: white;
+        border-radius: 5px;
+        height: 64vh;
+        width: 45%;
         display: flex;
+        padding: 20px;
         flex-direction: column;
+        // border:  solid 1px purple;
+    }
+
+    .meta-data{
+        margin-top: 10vh;
+        border-radius: 3px;
+        background-image: url('https://cdn.dribbble.com/users/3116769/screenshots/5926201/popjes_van_boven_4x.jpg');
+        height: 64vh;
+        -webkit-filter: grayscale(55%); /* Safari 6.0 - 9.0 */
+
+        // border: solid green 1px;
+        width: 45%;
+        background-size: cover;
     }
 }
