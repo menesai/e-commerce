@@ -3,6 +3,8 @@ import './Header.scss';
 import {Link} from 'react-router-dom'
 import {Icon} from 'semantic-ui-react';
 import {auth} from '../../firebase';
+import {connect} from 'react-redux';
+// import {get}
 
 const Header = ({currentUser}) => {
     return (
@@ -25,4 +27,8 @@ const Header = ({currentUser}) => {
     )
 }
 
-export default Header
+const mapStateToProps = (state) => ({
+    currentUser: state.user.currentUser
+})
+
+export default connect(mapStateToProps)(Header)

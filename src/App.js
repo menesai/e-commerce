@@ -43,7 +43,7 @@ class App extends Component {
     console.log(currentUser)
     return (
        <div className="App">
-         <Header currentUser={currentUser}/>
+         <Header />
           {routes}
       </div>
     );
