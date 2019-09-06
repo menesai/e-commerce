@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import './SignIn.scss'
 import {Form, Header, Button} from 'semantic-ui-react'
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import {auth} from '../../firebase';
 import firebase from '../../firebase';
+import {connect} from 'react-redux'
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
 const uiConfig = {
@@ -49,6 +50,7 @@ class SignIn extends Component {
 
 
     render() {
+        if(this.props.currentUser){return <Redirect push to ='/'/>}
         const {email, password}=this.state
             return (
                 <div className='signIn'>
@@ -104,5 +106,9 @@ class SignIn extends Component {
     }
 }
 
-export default SignIn;
+const mapStateToProps = ({user}) => ({
+    currentUser: user.currentUser
+})
+
+export default connect(mapStateToProps)(SignIn);
 

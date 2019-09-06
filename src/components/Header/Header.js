@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import {Icon} from 'semantic-ui-react';
 import {auth} from '../../firebase';
 import {connect} from 'react-redux';
-// import {get}
+import Cart from '../Cart/Cart';
 
 const Header = ({currentUser}) => {
     return (
@@ -21,7 +21,8 @@ const Header = ({currentUser}) => {
                 <Link className='option' to='/signin'>SIGN IN</Link>
             }
             <div className='options'>
-                <Link className='option' to='#'>LINK</Link>
+                <Cart/>
+                {/* <Link className='option' to='#'>LINK</Link> */}
             </div>
         </div>
     )

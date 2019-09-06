@@ -2,26 +2,23 @@ import React, { Component } from 'react'
 import './App.css';
 import Header from './components/Header/Header';
 import {auth, userDocument} from './firebase'
-import routes from './routes';
+import Routes from './Routes';
+import {connect} from 'react-redux'
+import {getCurrentUser} from './redux/users/userReducer'
 
 class App extends Component {
-  constructor(){
-    super();
-    
-    this.state ={
-      currentUser: null
-    }
-  }
 
   unsubscribeFromAuth = null
 
     componentDidMount(){
+      const {getCurrentUser} = this.props;
+
      this.unsubscribeFromAuth = auth.onAuthStateChanged(async user =>{
        if(user){
         const userRef = await userDocument(user)
 
         userRef.onSnapshot(snap =>{
-          this.setState({
+          getCurrentUser({
            currentUser: {
              id: snap.id,
              ...snap.data()
@@ -29,7 +26,7 @@ class App extends Component {
           })
         })
        } else {
-         this.setState({currentUser: user})
+         getCurrentUser(user)
        }
       })
     }
@@ -39,15 +36,18 @@ class App extends Component {
     }
 
   render(){  
-    const {currentUser} =this.state;
-    console.log(currentUser)
+    // console.log(currentUser)
     return (
        <div className="App">
          <Header />
-          {routes}
+          {Routes}
       </div>
     );
   }
   }
 
-export default App;
+  const mapDispatchToProps = (dispatch) => ({
+    getCurrentUser: user => dispatch(getCurrentUser(user))
+  })
+
+export default connect(null, mapDispatchToProps)(App);
