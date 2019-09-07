@@ -1,6 +1,7 @@
 import React from 'react'
 import './CollectionItem.scss';
-// {id, name, imageUrl, price}
+import {Label} from 'semantic-ui-react'
+
 const CollectionItem = ({name, price, id, imageUrl}) => {
     // console.log(props)
     return (
@@ -8,8 +9,8 @@ const CollectionItem = ({name, price, id, imageUrl}) => {
             <div className='image' style={{backgroundImage: `url(${imageUrl})`}}/>
 
             <div className='collection-footer'>
-                <span className='name'>{name}</span>
-                <span className='price'>${price}</span>
+                <Label size='medium' className='name'>{name}</Label>
+                <Label tag className='price'>${price}.00</Label>
             </div>
         </div>
     )

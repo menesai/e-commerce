@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './SignIn.scss'
-import {Form, Header, Button} from 'semantic-ui-react'
+import {Form, Header, Button, Divider} from 'semantic-ui-react'
 import {Link, Redirect} from 'react-router-dom';
 import {auth} from '../../firebase';
 import firebase from '../../firebase';
@@ -83,7 +83,10 @@ class SignIn extends Component {
     
                          <Button type='submit' value='Submit' color='blue'>Login</Button>
 
-                         <p className='separator'>- - - - - - - - - - - - - - - - Or - - - - - - - - - - - - - - - -</p>
+                         <div className='separator'>
+                             <Divider horizontal>Or</Divider>
+                         </div>
+                         
 
                          <div className='provider'>
                          <StyledFirebaseAuth 

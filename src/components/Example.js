@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-// import firebase from '../firebase'
-import Cart from '../components/Cart/Cart';
+import './Example.scss'
+import CardDropDown from './CartDropDown/CartDropDown'
 
 class Example extends Component {
+
     render() {
         return (
             <div>
-                <Cart/>
+               <CardDropDown/>
             </div>
         )
     }

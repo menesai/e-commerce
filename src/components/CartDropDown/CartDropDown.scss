@@ -1,0 +1,14 @@
+.cdd{
+    // border: solid 1px red;
+    display: flex;
+    // justify-content: center;
+    flex-direction: row-reverse;
+    // justify-content: flex-end;
+    width: 99%;
+    height: 55vh
+}
+
+.card-3{
+    overflow-y: scroll; 
+    overflow-x:hidden;
+}
