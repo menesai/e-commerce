@@ -1,14 +1,27 @@
 .cdd{
-    // border: solid 1px red;
     display: flex;
-    // justify-content: center;
     flex-direction: row-reverse;
-    // justify-content: flex-end;
-    width: 99%;
-    height: 55vh
+    // width: 99%;
+    height: 55vh;
+    position: absolute;
+    z-index: 3;
+    top:10%;
+    right:.5%;
+    
+    .chk-out{
+       padding: 0px 5px 12px 5px
+    }
 }
 
 .card-3{
-    overflow-y: scroll; 
+    overflow-y: auto; 
     overflow-x:hidden;
+}
+
+.card-3::-webkit-scrollbar-thumb {
+   background-color: rgb(139, 139, 139)
+  }
+
+  .card-3::-webkit-scrollbar {
+    width: 8px;
 }

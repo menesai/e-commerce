@@ -5,8 +5,9 @@ import {Icon} from 'semantic-ui-react';
 import {auth} from '../../firebase';
 import {connect} from 'react-redux';
 import Cart from '../Cart/Cart';
+import CartDropDown from '../CartDropDown/CartDropDown';
 
-const Header = ({currentUser}) => {
+const Header = ({currentUser, hidden}) => {
     return (
         <div className='main-header'>
 
@@ -22,14 +23,15 @@ const Header = ({currentUser}) => {
             }
             <div className='options'>
                 <Cart/>
-                {/* <Link className='option' to='#'>LINK</Link> */}
             </div>
+            {!hidden?<CartDropDown/>: <CartDropDown/> }
         </div>
     )
 }
 
-const mapStateToProps = (state) => ({
-    currentUser: state.user.currentUser
+const mapStateToProps = ({user: {currentUser}, cart: {hidden}}) => ({
+    currentUser,
+    hidden
 })
 
 export default connect(mapStateToProps)(Header)
