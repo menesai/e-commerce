@@ -8,7 +8,7 @@ const CartDropDown = ({hidden}) => {
         <div className='cdd'>
             <Transition visible={hidden} animation='slide down' duration={500}>
             <Card className='card-3'>
-                <Card.Content>
+                <Card.Content> 
                     <Card.Header>You have nothing in your cart...</Card.Header>
                 </Card.Content>
                 <Card.Content>
