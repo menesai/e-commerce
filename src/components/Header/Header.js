@@ -7,7 +7,7 @@ import {connect} from 'react-redux';
 import Cart from '../Cart/Cart';
 import CartDropDown from '../CartDropDown/CartDropDown';
 
-const Header = ({currentUser, hidden}) => {
+const Header = ({currentUser, itemCount}) => {
     return (
         <div className='main-header'>
 
@@ -22,17 +22,22 @@ const Header = ({currentUser, hidden}) => {
                 <Link className='option' to='/signin'>SIGN IN</Link>
             }
             <div className='options'>
-                <Cart/>
+                <Cart
+                itemCount={itemCount}
+                />
             </div>
             {/* {!hidden?<CartDropDown/>: null } */}
-            <CartDropDown/>
+            <CartDropDown
+            itemCount={itemCount}
+            />
         </div>
     )
 }
 
-const mapStateToProps = ({user: {currentUser}, cart: {hidden}}) => ({
+const mapStateToProps = ({user: {currentUser}, cart: {hidden}, cart:{cartItems}}) => ({
     currentUser,
-    hidden
+    hidden,
+    itemCount: cartItems.reduce((acc, cartItem,) => acc + cartItem.quantity, 0),
 })
 
 export default connect(mapStateToProps)(Header)

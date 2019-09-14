@@ -3,11 +3,11 @@ import {Icon, Label} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import {toggleCart} from '../../redux/cart/cartReducer';
 
-const Cart = ({toggleCart}) => {
+const Cart = ({toggleCart, itemCount}) => {
     return (
         <Label color='black' size='small' as='a' onClick={toggleCart}>
             <Icon size='large' name='cart'/>
-            <Label color='red' size='small' circular>0</Label>
+            <Label color='red' size='small' circular>{itemCount}</Label>
         </Label>
     )
 }

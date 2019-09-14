@@ -1,15 +1,18 @@
 import React from 'react'
 import './CollectionItem.scss';
 import {Label, Button} from 'semantic-ui-react'
+import {connect} from 'react-redux';
+import {addItem} from '../../redux/cart/cartReducer'
 
-const CollectionItem = ({name, price, id, imageUrl}) => {
-    // console.log(props)
+const CollectionItem = ({item, addItem}) => {
+    const {imageUrl, name, price} = item
+    // console.log(item)
     return (
         <div className='collection-item'>
             <div className='image' style={{backgroundImage: `url(${imageUrl})`}} >
             <div id='b' >    
                 <div id='c'>
-                    <Button inverted>Add To Cart</Button>
+                    <Button onClick={() => addItem(item)} inverted>Add To Cart</Button>
                 </div>
                 </div>
             </div>
@@ -22,4 +25,8 @@ const CollectionItem = ({name, price, id, imageUrl}) => {
     )
 }
 
-export default CollectionItem
+const mapDispatchToProps = dispatch => ({
+    addItem: item => dispatch(addItem(item))
+})
+
+export default connect(null, mapDispatchToProps)(CollectionItem);

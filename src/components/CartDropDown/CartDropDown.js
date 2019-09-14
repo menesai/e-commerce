@@ -3,41 +3,30 @@ import './CartDropDown.scss'
 import {Card, Image, Button, Transition} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 
-const CartDropDown = ({hidden}) => {
+const CartDropDown = ({hidden, cartItems, itemCount}) => {
+    // console.log
     return (
         <div className='cdd'>
             <Transition visible={hidden} animation='slide down' duration={500}>
             <Card className='card-3'>
-                <Card.Content> 
-                    <Card.Header>You have nothing in your cart...</Card.Header>
+                <Card.Content header={!itemCount ? 'You have nothin in cart': `you have ${itemCount} item in cart `} textAlign='center'> 
+                   
                 </Card.Content>
-                <Card.Content>
-                    <Image floated='left' size='tiny' src='https://assets.adidas.com/images/w_600,h_600,f_auto,q_auto:sensitive,fl_lossy/9a1ba9ec74724192b3dfa80f009c325f_9366/Ultraboost_Shoes_White_BB6168_01_standard.jpg'/>
-                    <Card.Header>Adidas Ultra Boost</Card.Header> 
-                    <Card.Meta textAlign='left'>$34.00</Card.Meta>
-                    <Card.Meta>Qty: 0</Card.Meta>
+                    {cartItems.map((el,i) =>{
+                        return(
+                            // <div className='itemInfo' key={i}>
+                            <Card.Content key={i}>
+                                <Image floated='left' size='tiny' src={el.imageUrl}/>
+                                <Card.Header>{el.name}</Card.Header> 
+                                <Card.Meta textAlign='left'>${el.price}</Card.Meta>
+                                <Card.Meta>Qty: {el.quantity}</Card.Meta>
+                            </Card.Content>
+                            // </div>
+                        )
+                    })}
+                <Card.Content extra>
+                    {!itemCount? null : <Button fluid>Go to Checkout</Button>}
                 </Card.Content>
-                <Card.Content>
-                    <Image floated='left' size='tiny' src='https://assets.adidas.com/images/w_600,h_600,f_auto,q_auto:sensitive,fl_lossy/9a1ba9ec74724192b3dfa80f009c325f_9366/Ultraboost_Shoes_White_BB6168_01_standard.jpg'/>
-                    <Card.Header>Adidas Ultra Boost</Card.Header> 
-                    <Card.Meta textAlign='left'>$34.00</Card.Meta>
-                    <Card.Meta>Qty: 0</Card.Meta>
-                </Card.Content>
-                <Card.Content>
-                    <Image floated='left' size='tiny' src='https://assets.adidas.com/images/w_600,h_600,f_auto,q_auto:sensitive,fl_lossy/9a1ba9ec74724192b3dfa80f009c325f_9366/Ultraboost_Shoes_White_BB6168_01_standard.jpg'/>
-                    <Card.Header>Adidas Ultra Boost</Card.Header> 
-                    <Card.Meta textAlign='left'>$34.00</Card.Meta>
-                    <Card.Meta>Qty: 0</Card.Meta>
-                </Card.Content>
-                <Card.Content>
-                    <Image floated='left' size='tiny' src='https://assets.adidas.com/images/w_600,h_600,f_auto,q_auto:sensitive,fl_lossy/9a1ba9ec74724192b3dfa80f009c325f_9366/Ultraboost_Shoes_White_BB6168_01_standard.jpg'/>
-                    <Card.Header>Adidas Ultra Boost</Card.Header> 
-                    <Card.Meta textAlign='left'>$34.00</Card.Meta>
-                    <Card.Meta>Qty: 0</Card.Meta>
-                </Card.Content>
-                <div className='chk-out'>
-                <Button fluid>Go to Checkout</Button>
-                </div>
             </Card>
 
             </Transition>
@@ -46,8 +35,10 @@ const CartDropDown = ({hidden}) => {
     )
 }
 
-const mapStateToProps = ({ cart: {hidden}}) => ({
-    hidden
+const mapStateToProps = ({ cart: {hidden}, cart:{cartItems}}) => ({
+    hidden,
+    cartItems,
 })
+
 
 export default connect(mapStateToProps)(CartDropDown)
