@@ -6,6 +6,7 @@ import {auth} from '../../firebase';
 import {connect} from 'react-redux';
 import Cart from '../Cart/Cart';
 import CartDropDown from '../CartDropDown/CartDropDown';
+import {selectCartItemsCount} from '../../redux/cart/cart.selectors'
 
 const Header = ({currentUser, itemCount}) => {
     return (
@@ -26,7 +27,6 @@ const Header = ({currentUser, itemCount}) => {
                 itemCount={itemCount}
                 />
             </div>
-            {/* {!hidden?<CartDropDown/>: null } */}
             <CartDropDown
             itemCount={itemCount}
             />
@@ -34,10 +34,9 @@ const Header = ({currentUser, itemCount}) => {
     )
 }
 
-const mapStateToProps = ({user: {currentUser}, cart: {hidden}, cart:{cartItems}}) => ({
-    currentUser,
-    hidden,
-    itemCount: cartItems.reduce((acc, cartItem,) => acc + cartItem.quantity, 0),
+const mapStateToProps = (state) => ({
+    currentUser: state.user.currentUser,
+    itemCount: selectCartItemsCount(state)
 })
 
 export default connect(mapStateToProps)(Header)
