@@ -7,6 +7,8 @@ import {connect} from 'react-redux';
 import Cart from '../Cart/Cart';
 import CartDropDown from '../CartDropDown/CartDropDown';
 import {selectCartItemsCount} from '../../redux/cart/cart.selectors'
+import {selectCurrentUser} from '../../redux/users/user.selector';
+import {createStructuredSelector} from 'reselect'
 
 const Header = ({currentUser, itemCount}) => {
     return (
@@ -34,9 +36,9 @@ const Header = ({currentUser, itemCount}) => {
     )
 }
 
-const mapStateToProps = (state) => ({
-    currentUser: state.user.currentUser,
-    itemCount: selectCartItemsCount(state)
+const mapStateToProps = createStructuredSelector({
+    currentUser: selectCurrentUser,
+    itemCount: selectCartItemsCount
 })
 
 export default connect(mapStateToProps)(Header)

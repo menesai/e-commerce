@@ -2,30 +2,29 @@ import React from 'react'
 import './CartDropDown.scss'
 import {Card, Image, Button, Transition} from 'semantic-ui-react';
 import {connect} from 'react-redux';
+import {selectCartItems} from '../../redux/cart/cart.selectors'
+import {createStructuredSelector} from 'reselect'
+import {selectCartHidden} from '../../redux/cart/cart.selectors'
+import {withRouter} from 'react-router-dom'
 
-const CartDropDown = ({hidden, cartItems, itemCount}) => {
-    // console.log
+const CartDropDown = ({hidden, cartItems, itemCount, history}) => {
     return (
         <div className='cdd'>
             <Transition visible={hidden} animation='slide down' duration={500}>
             <Card className='card-3'>
-                <Card.Content header={!itemCount ? 'You have nothin in cart': `you have ${itemCount} item in cart `} textAlign='center'> 
-                   
-                </Card.Content>
+                <Card.Content header={!itemCount ? 'Your cart is empty...': `you have ${itemCount} item in cart `} textAlign='center'/>
                     {cartItems.map((el,i) =>{
                         return(
-                            // <div className='itemInfo' key={i}>
                             <Card.Content key={i}>
                                 <Image floated='left' size='tiny' src={el.imageUrl}/>
                                 <Card.Header>{el.name}</Card.Header> 
                                 <Card.Meta textAlign='left'>${el.price}</Card.Meta>
                                 <Card.Meta>Qty: {el.quantity}</Card.Meta>
                             </Card.Content>
-                            // </div>
                         )
                     })}
                 <Card.Content extra>
-                    {!itemCount? null : <Button fluid>Go to Checkout</Button>}
+                    {!itemCount? null : <Button onClick={() => history.push('/checkout')} fluid>Go to Checkout</Button>}
                 </Card.Content>
             </Card>
 
@@ -35,10 +34,10 @@ const CartDropDown = ({hidden, cartItems, itemCount}) => {
     )
 }
 
-const mapStateToProps = ({ cart: {hidden}, cart:{cartItems}}) => ({
-    hidden,
-    cartItems,
+const mapStateToProps = createStructuredSelector({
+    hidden: selectCartHidden,
+    cartItems: selectCartItems,
 })
 
 
-export default connect(mapStateToProps)(CartDropDown)
+export default withRouter(connect(mapStateToProps)(CartDropDown))
