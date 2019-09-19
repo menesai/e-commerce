@@ -5,9 +5,10 @@ import {connect} from 'react-redux';
 import {selectCartItems} from '../../redux/cart/cart.selectors'
 import {createStructuredSelector} from 'reselect'
 import {selectCartHidden} from '../../redux/cart/cart.selectors'
-import {withRouter} from 'react-router-dom'
+import {withRouter} from 'react-router-dom';
+import {toggleCart} from '../../redux/cart/cartReducer'
 
-const CartDropDown = ({hidden, cartItems, itemCount, history}) => {
+const CartDropDown = ({hidden, cartItems, itemCount, history,dispatch}) => {
     return (
         <div className='cdd'>
             <Transition visible={hidden} animation='slide down' duration={500}>
@@ -24,7 +25,10 @@ const CartDropDown = ({hidden, cartItems, itemCount, history}) => {
                         )
                     })}
                 <Card.Content extra>
-                    {!itemCount? null : <Button onClick={() => history.push('/checkout')} fluid>Go to Checkout</Button>}
+                    {!itemCount? null : <Button onClick={() =>{
+                        history.push('/checkout')
+                        dispatch(toggleCart())
+                    }} fluid>Go to Checkout</Button>}
                 </Card.Content>
             </Card>
 

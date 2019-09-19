@@ -1,0 +1,25 @@
+.checkout{
+    width: 95%;
+    margin: auto;
+    margin-top: 5vh;
+    // border: solid red 1px;
+
+}
+
+.chk-out-footer{
+    // border: solid red 1px;
+    display: flex;
+    width: 95%;
+    flex-direction: row-reverse;
+}
+
+@media(max-width: 375px){
+    .checkout{
+        border: solid red 1px;
+        width: 100%;
+        // height: 90px;
+        margin: 0;
+    }
+
+   
+}
