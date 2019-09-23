@@ -1,12 +1,13 @@
 import React from 'react'
 import './Checkout.scss'
-import {Table, Icon} from 'semantic-ui-react'
+import {Table} from 'semantic-ui-react'
 import {connect} from 'react-redux'
 import {createStructuredSelector} from 'reselect'
-import {selectCartItems} from '../../redux/cart/cart.selectors'
+import {selectCartItems, cartItemTotal} from '../../redux/cart/cart.selectors'
+import CheckoutItem from '../../components/Checkout-Item/CheckoutItem'
 
-const Checkout = ({cartItems}) => {
-    console.log(cartItems)
+const Checkout = ({cartItems, cartTotal}) => {
+    // console.log(cartItems)
     return (
         <div className='checkout'>
            <Table  textAlign='center' unstackable  className='tb' >
@@ -22,32 +23,20 @@ const Checkout = ({cartItems}) => {
 
                <Table.Body>
                    {cartItems.map((el, i) =>(
-                    <Table.Row key={i}>
-                        <Table.Cell>
-                            <img style={{height:50, objectFit: 'contain'}} src={el.imageUrl} alt='item'/>
-                        </Table.Cell>
-                        <Table.Cell >{el.name}</Table.Cell>
-                        <Table.Cell>
-                            <Icon name='angle left' size='large' link fitted/>
-                                 {' '} {el.quantity} {' '}
-                            <Icon name='angle right' size='large' link fitted/>
-                        </Table.Cell>
-                        <Table.Cell>${el.price}.00</Table.Cell>
-                        <Table.Cell selectable icon='trash'></Table.Cell>
-                    </Table.Row>        
+                    <CheckoutItem key={el.id} cartItem={el}/>      
                 ))}
                </Table.Body>
            </Table>
            <div className='chk-out-footer'>
-             <h3>Total: $34.00</h3>
+             <h3>Total: ${cartTotal}.00</h3>
            </div>
         </div>
     )
 }
 
  const mapStateToProps = createStructuredSelector({
-     cartItems: selectCartItems
-
+     cartItems: selectCartItems,
+     cartTotal: cartItemTotal
  })
 
 export default connect(mapStateToProps)(Checkout)
