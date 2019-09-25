@@ -1,61 +1,24 @@
 import React, { Component } from 'react'
 import './Directory.scss'
 import MenuItem from '../MenuItem/MenuItem'
+import {connect} from 'react-redux'
+import  {createStructuredSelector} from 'reselect'
+import {selectDirectoryItem} from '../../redux/Directory/directory.selectors'
 
-class Directory extends Component {
-    constructor(){
-        super()
-        this.state={
-            section:[{
-                title: 'HATS',
-                imageUrl: 'https://static.zumiez.com/skin/frontend/delorum/default/images/Brixton-hats-assorted-yellow-black-061719-444x500.jpg',
-                id: 1,
-                linkUrl: 'hats'
-              },
-              {
-                title: 'JACKETS',
-                imageUrl: 'https://www.pacsun.com/dw/image/v2/AAJE_PRD/on/demandware.static/-/Sites-pacsun-Library/default/dwf7942b4a/2019/floorsets/08/01/mens2.jpg?sw=978',
-                id: 2,
-                linkUrl: 'shop/jackets'
-              },
-              {
-                title: 'SNEAKERS',
-                imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
-                id: 3,
-                linkUrl: 'shop/sneakers'
-              },
-              {
-                title: 'WOMENS',
-                imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
-                size: 'large',
-                id: 4,
-                linkUrl: 'shop/womens'
-              },
-              {
-                title: 'MENS',
-                imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-                size: 'large',
-                id: 5,
-                linkUrl: 'shop/mens'
-              }]
-        }
-    }
+const passInfo = (section) => section.map(({id, ...sectionProps}) =>(
+   <MenuItem key={id} {...sectionProps}/>
+ ))
 
-    passInfo = (section) => section.map(({id, ...sectionProps}) =>(
-      <MenuItem key={id} {...sectionProps}/>
-    ))
-    
-
-
-
-    render() {
-      const {section}=this.state
+const Directory = ({section}) => {
       return (
             <div className='directory-menu'>
-                {this.passInfo(section)}
+                {passInfo(section)}
             </div>
         )
-    }
 }
 
-export default Directory
+const mapStateToProps = createStructuredSelector({
+    section: selectDirectoryItem
+})
+
+export default connect(mapStateToProps)(Directory)
