@@ -1,0 +1,26 @@
+
+
+.collection-page{
+    width: 90vw;
+    margin: auto;
+    // border: solid 1px red;
+    // height: ;
+
+    .cat-title{
+        text-align: center;
+        padding: 14px 14px
+    }
+
+    .items-cat{
+        // border: solid 1px blue;
+        height: 100%;
+        flex-direction: row;
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: space-between;
+    }
+
+    & .collection-item{
+        margin-bottom: 8vh;
+    }
+}

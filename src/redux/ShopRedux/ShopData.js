@@ -198,6 +198,12 @@ const SHOP_DATA = [
         name: 'White Blouse',
         imageUrl: 'https://i.ibb.co/qBcrsJg/white-vest.png',
         price: 20
+      },
+      {
+        id: 30,
+        name: 'White Blouse',
+        imageUrl: 'https://i.ibb.co/qBcrsJg/white-vest.png',
+        price: 20
       }
     ]
   },
@@ -238,6 +244,18 @@ const SHOP_DATA = [
       },
       {
         id: 35,
+        name: 'Burgundy T-shirt',
+        imageUrl: 'https://i.ibb.co/mh3VM1f/polka-dot-shirt.png',
+        price: 25
+      },
+      {
+        id: 36,
+        name: 'Burgundy T-shirt',
+        imageUrl: 'https://i.ibb.co/mh3VM1f/polka-dot-shirt.png',
+        price: 25
+      },
+      {
+        id: 37,
         name: 'Burgundy T-shirt',
         imageUrl: 'https://i.ibb.co/mh3VM1f/polka-dot-shirt.png',
         price: 25
