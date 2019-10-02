@@ -3,7 +3,7 @@ const initialState ={
         title: 'HATS',
         imageUrl: 'https://static.zumiez.com/skin/frontend/delorum/default/images/Brixton-hats-assorted-yellow-black-061719-444x500.jpg',
         id: 1,
-        linkUrl: 'hats'
+        linkUrl: 'shop/hats'
       },
       {
         title: 'JACKETS',
