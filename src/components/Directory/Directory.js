@@ -5,14 +5,15 @@ import {connect} from 'react-redux'
 import  {createStructuredSelector} from 'reselect'
 import {selectDirectoryItem} from '../../redux/Directory/directory.selectors'
 
-const passInfo = (section) => section.map(({id, ...sectionProps}) =>(
-   <MenuItem key={id} {...sectionProps}/>
- ))
+// const passInfo = (section) => section.map(({id, ...sectionProps}) =>(
+//    <MenuItem key={id} {...sectionProps}/>
+//  ))
 
 const Directory = ({section}) => {
       return (
             <div className='directory-menu'>
-                {passInfo(section)}
+                {/* {passInfo(section)} */}
+                <MenuItem section={section}/>
             </div>
         )
 }
