@@ -14,7 +14,7 @@ const Header = ({currentUser, itemCount}) => {
     return (
         <div className='main-header'>
 
-            <div className='logo-container1'> <Link className='logo-container' to='/'><Icon name='shopping bag' color='grey' size='big'/> HOME</Link></div>
+            <div className='logo-container1'> <Link className='logo-container' to='/'><Icon name='shopping bag' color='grey' size='big'/>Allwear</Link></div>
 
             <div className='options'>
                 <Link className='option' to='/shop'> SHOP</Link>

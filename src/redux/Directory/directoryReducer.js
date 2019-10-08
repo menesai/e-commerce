@@ -2,7 +2,7 @@ const initialState ={
   section:[
     {
       title: 'HATS',
-      imageUrl: 'https://static.zumiez.com/skin/frontend/delorum/default/images/Brixton-hats-assorted-yellow-black-061719-444x500.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1510598969022-c4c6c5d05769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2613&q=80',
       id: 1,
       linkUrl: 'shop/hats'
     },
@@ -20,14 +20,14 @@ const initialState ={
     },
     {
       title: 'WOMENS',
-      imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+      imageUrl: 'https://images.unsplash.com/photo-1495385794356-15371f348c31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=919&q=80',
       size: 'large',
       id: 4,
       linkUrl: 'shop/womens'
     },
     {
       title: 'MENS',
-      imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+      imageUrl: 'https://images.unsplash.com/photo-1569909265601-2110fe50a54f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=951&q=80',
       size: 'large',
       id: 5,
       linkUrl: 'shop/mens'
