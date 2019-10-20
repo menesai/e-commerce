@@ -48,3 +48,31 @@
 
 
 }
+
+
+@media(max-width: 1000px){
+    
+    .SignInForm{
+        // height: 100%;
+       display: flex;
+    //    width: 100vw;
+    //    flex-direction: row;
+       justify-content: stretch
+
+    }
+
+    .box-2{
+        // display: none;
+        width: 50vw;
+        border: solid 2px yellow;
+    }
+
+    
+
+}
+
+@media(max-width: 414){
+    .box-2{
+        display: none;
+    }
+}

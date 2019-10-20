@@ -2,12 +2,14 @@ import {addItemToCart, adjustItemCart} from './cart.utils'
 
 
 const initialState ={
+    sidebar: false,
     hidden: false,
     cartItems: [],
 }
 
 // action types
 
+const TOGGLE_SIDE_BAR = 'TOGGLE_SIDE_BAR'
 const TOGGLE_CART = 'TOGGLE_CART';
 const ADD_ITEM = 'ADD_ITEM';
 const CLEAR_ITEM = 'CLEAR_ITEM'
@@ -17,6 +19,10 @@ const ADJUST_ITEM = 'ADJUST_ITEM'
 // action creators
 export const toggleCart = () => ({
     type:TOGGLE_CART,
+})
+
+export const toggleSideBar = () => ({
+    type: TOGGLE_SIDE_BAR,
 })
 
 export const addItem = (item) => ({
@@ -42,6 +48,11 @@ const cartReducer = (state = initialState, action) => {
                 ...state,
                 hidden: !state.hidden
             }
+        case 'TOGGLE_SIDE_BAR':
+            return{
+                ...state,
+                sidebar: !state.sidebar
+            }   
         case 'ADD_ITEM':
             return{
                 ...state,

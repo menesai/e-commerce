@@ -14,13 +14,13 @@ const initialState ={
     },
     {
       title: 'SNEAKERS',
-      imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
+      imageUrl: 'https://www.pacsun.com/dw/image/v2/AAJE_PRD/on/demandware.static/-/Sites-pacsun-Library/default/dwd6d164d6/2019/floorsets/10/10/mens3.jpg?sw=978',
       id: 3,
       linkUrl: 'shop/sneakers'
     },
     {
       title: 'WOMENS',
-      imageUrl: 'https://images.unsplash.com/photo-1495385794356-15371f348c31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=919&q=80',
+      imageUrl: 'https://images.unsplash.com/photo-1485231183945-fffde7cc051e?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80',
       size: 'large',
       id: 4,
       linkUrl: 'shop/womens'

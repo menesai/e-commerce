@@ -54,7 +54,7 @@ class SignIn extends Component {
         const {email, password}=this.state
             return (
                 <div className='signIn'>
-                    <Form  className='SignInForm' onSubmit={this.handleForm} style={{maxWidth: 450}}>
+                    <Form  className='SignInForm' onSubmit={this.handleForm}>
                        <Header as='h2' color='blue' textAlign='center' className='signInHeader'>
                         {/* <Icon name='shopping bag' color='black' size='small'/> */}
                             Welcome back 

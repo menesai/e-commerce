@@ -48,8 +48,22 @@ div#b:hover div#c {
     align-items: center;
 }
 
+@media(max-width: 1055px){
+    .collection-item{
+        width: 40%;
+        margin-bottom: 8vh;
+        // font-size: 1px;
+    }
 
+    
+}
 
+@media(max-width: 547px){
+    .collection-item{
+        width: 100%;
+        margin-bottom: 10vh;
+    }
+}
 
 
 
