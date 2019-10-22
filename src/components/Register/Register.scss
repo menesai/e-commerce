@@ -1,37 +1,97 @@
 .register{
-    // border:solid red 1px;
+    // border:solid red 2px;
     display: flex;
     justify-content: center;
     align-content: center;
     height: 90vh;
     padding: 20px;
-    // padding: 0 20px 0 20px;
+    padding: 0 20px 0 20px;
     background: linear-gradient(to bottom right, rgb(100, 100, 223), rgb(248, 204, 212));
 
     .register-form{
         text-align: center;
-        margin-top: 10vh;
+        // margin-top: 10vh;
         justify-content: center;
         align-content: center;
         background-color: white;
-        border-radius: 5px;
+        // border-radius: 5px;
         height: 64vh;
-        width: 45%;
+        // width: 45%;
         display: flex;
-        padding: 20px;
+        // padding: 20px;
         flex-direction: column;
-        // border:  solid 1px purple;
+        // border:  solid 2px purple;
     }
 
     .meta-data{
-        margin-top: 10vh;
-        border-radius: 3px;
+        // margin-top: 6%;
+        // border-radius: 3px;
+        // background-image: url('https://images.livemint.com/rf/Image-621x414/LiveMint/Period2/2018/06/07/Photos/Processed/online-shopping-kffB--621x414@LiveMint.jpg');
+
         background-image: url('https://cdn.dribbble.com/users/3116769/screenshots/5926201/popjes_van_boven_4x.jpg');
-        height: 64vh;
+        // height: 50%;
         -webkit-filter: grayscale(55%); /* Safari 6.0 - 9.0 */
 
-        // border: solid green 1px;
-        width: 45%;
+        // border: solid green 2px;
+        // width: 45%;
         background-size: cover;
+    }
+}
+
+// .elel{
+//     border: solid red 1px ;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+
+@media(max-width: 1200px){
+    .register{
+        // margin-top: 0;
+        padding: 10px;;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    .register-form{
+        height: 20vh;
+        width: 90%;
+        padding: 0 50px 0 50px;
+    }
+
+    .meta-data{
+        height: 50%;
+        width: 90%;;
+        // margin-bottom: 10vh;
+    }
+}
+
+@media(max-width: 500px){
+    .register-form{
+        padding: 0 10px 0 10px;
+    }
+}
+
+@media(min-width: 1202px){
+
+    .register-form{
+        margin-top: 10vh;
+        width: 45%;
+        padding: 20px;
+    }
+
+    .meta-data{
+        margin-top: 5.8%;
+        height: 64vh;
+        width: 45%;
+
+    }
+}
+
+@media(min-width: 1309px){
+    .meta-data{
+        margin-top: 5.8%;
     }
 }

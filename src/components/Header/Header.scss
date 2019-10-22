@@ -29,12 +29,20 @@
     .option{
         padding: 10px 12px
     }
+
+    .option:hover, .H-name:hover{
+        color: rgb(160, 160, 160);
+    }
 }
 
 .ham{
     display: none;
 }
 
+.h-items{
+    margin-top: 3vh;
+
+}
 
 
 //ipad views
@@ -42,7 +50,7 @@
     .logo-container1{
         font-size: 1.1em;
         width: 0%;
-        border: solid red 1px;
+        // border: solid red 1px;
         // wdith: 0%;
     }
 
@@ -69,7 +77,7 @@
         display: none;
     }
     .options-cart{
-        border: solid 1px orange;
+        // border: solid 1px orange;
 
     }
     .logo-container1{

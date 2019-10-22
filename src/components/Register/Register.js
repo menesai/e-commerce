@@ -49,7 +49,7 @@ export class Register extends Component {
         const {displayName, email, password, confirmPassword} =this.state;
         return (
             <div className='register'>
-
+                {/* <div className='elel'> */}
                 <Form className='register-form' onSubmit={this.handleSubmit}>
                 <h2>Register</h2>
                     <Form.Input
@@ -94,9 +94,11 @@ export class Register extends Component {
                     />
                     <Button color='linkedin' type='submit'>Submit</Button>
                 </Form>
+
                 <div className='meta-data' >
                     {/* <img src='' alt='shopping'/> */}
                 </div>
+                {/* </div> */}
             
             </div>
         )

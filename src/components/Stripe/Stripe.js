@@ -14,7 +14,7 @@ const Stripe = ({price}) => {
     return (
         <StripeCheckout
             name='Allwear'
-            description='Selling sizzling clothes'
+            // description='Selling sizzling clothes'
             billingAddress
             shippingAddress
             description={`your total is $${price}.00`}

@@ -54,6 +54,7 @@ class SignIn extends Component {
         const {email, password}=this.state
             return (
                 <div className='signIn'>
+                    <div className='div-1'>
                     <Form  className='SignInForm' onSubmit={this.handleForm}>
                        <Header as='h2' color='blue' textAlign='center' className='signInHeader'>
                         {/* <Icon name='shopping bag' color='black' size='small'/> */}
@@ -99,7 +100,7 @@ class SignIn extends Component {
                                 <label className='register-link'>Don't have an account? <Link to='/register'>Create one here</Link></label>
                             </div>
                     </Form>
-                    
+                    </div>
     
                     <div className='box-2'>
                         
