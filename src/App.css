@@ -3,7 +3,13 @@
 
 
 body{
-    font-family: 'Dosis', sans-serif;  
+    font-family: 'Dosis', sans-serif; 
+    /* background: rgb(190, 74, 74);  */
     /* font-family: 'Hind', sans-serif; */
+
+}
+
+.App{
+        background: rgb(223, 223, 223); 
 
 }

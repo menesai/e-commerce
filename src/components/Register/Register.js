@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import './Register.scss'
 import {auth, userDocument} from '../../firebase';
-import {Form, Button} from 'semantic-ui-react'
+import {Form, Button, Header} from 'semantic-ui-react'
+import logo from '../SignIn/sec.svg'
 
 export class Register extends Component {
     constructor(){
@@ -51,7 +52,10 @@ export class Register extends Component {
             <div className='register'>
                 {/* <div className='elel'> */}
                 <Form className='register-form' onSubmit={this.handleSubmit}>
-                <h2>Register</h2>
+                <Header as='h2' color='blue' textAlign='center' className='signInHeader'>
+                            Register 
+                       </Header>
+                       <span style={{textAlign: 'center', marginBottom: 20}}>Sign in with email and password</span>
                     <Form.Input
                         type='text'
                         onChange={this.handleChange}
@@ -96,9 +100,9 @@ export class Register extends Component {
                 </Form>
 
                 <div className='meta-data' >
-                    {/* <img src='' alt='shopping'/> */}
+                    <img className='sec-wave' src={logo} alt='shopping'/>
                 </div>
-                {/* </div> */}
+                
             
             </div>
         )

@@ -102,8 +102,9 @@ class SignIn extends Component {
                     </Form>
                     </div>
     
-                    <div className='box-2'>
-                        
+                    <div className='box-2' >
+                    <div className='wave -one'></div>
+                    <h3 className='s-title'>Discover new styles at Allwear</h3>
                     </div>
                 </div>
             )
