@@ -7,6 +7,13 @@
 }
 
 .main-header{
+    position: fixed;
+    top: 0;
+    // padding-top: 10vh;
+    // margin-top: -20vh;
+    // position: absolute;
+    z-index: 2;
+    // opacity: .9;
     background-color: #1B1C1D;
     height: 10vh;
     width: 100%;

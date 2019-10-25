@@ -8,7 +8,7 @@ const genderMenuItem = (section, history, match) =>
     <div className='menu-item' onClick={() => history.push(`${match.url}${el.linkUrl}`)} key={el.id}>
     <div key={el.id} className='background-image' style={{backgroundImage: `url(${el.imageUrl})`}}/>
       <div className='content'>
-        <div className='title'>{el.title}</div>
+        <h3 className='title'>{el.title}</h3>
         <span className='subtitle'>SHOP NOW</span>
       </div>
     </div>
@@ -21,7 +21,7 @@ const genderMenuItem = (section, history, match) =>
       <div className='menu-item-2' onClick={() => his.push(`${mat.url}${el.linkUrl}`)} key={el.id}>
       <div key={el.id} className='background-image' style={{backgroundImage: `url(${el.imageUrl})`}}/>
         <div className='content'>
-          <div className='title'>{el.title}</div>
+          <h3 className='title'>{el.title}</h3>
           <span className='subtitle'>SHOP NOW</span>
         </div>
       </div>
