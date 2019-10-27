@@ -1,99 +1,73 @@
-.register{
-    // border:solid red 2px;
+.reg-cont{
+    // background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     height: 90vh;
-    padding: 20px;
-    padding: 0 20px 0 20px;
-    // background: linear-gradient(to bottom right, rgb(100, 100, 223), rgb(248, 204, 212));
+    width: 100%;
+    // padding: 20px;
 
-    .register-form{
-        text-align: center;
-        // margin-top: 10vh;
-        justify-content: center;
-        align-content: center;
-        background-color: white;
-        // border-radius: 5px;
-        height: 64vh;
-        // width: 45%;
-        display: flex;
-        // padding: 20px;
-        flex-direction: column;
-        // border:  solid 2px purple;
-    }
+    .reg-con-o{
+        background: white;
+        padding:0 10px 0 10px;
+        // border: solid 1px red;
+        height: 70vh;
+        width: 30%;
 
-    .meta-data{
-           background: linear-gradient(to bottom right, rgb(146, 146, 255), rgb(255, 105, 132));
-        // margin-top: 6%;
-        // border-radius: 3px;
-        // background-image: url('https://images.livemint.com/rf/Image-621x414/LiveMint/Period2/2018/06/07/Photos/Processed/online-shopping-kffB--621x414@LiveMint.jpg');
-
-        // background-image: url('https://cdn.dribbble.com/users/3116769/screenshots/5926201/popjes_van_boven_4x.jpg');
-        // height: 50%;
-        -webkit-filter: grayscale(55%); /* Safari 6.0 - 9.0 */
-
-        // border: solid green 2px;
-        // width: 45%;
-        background-size: cover;
-
-        display: flex;
-        flex-direction: column-reverse;
-        .sec-wave{
-            opacity: .4;
-            width: 100%;
-            // padding-bottom: 5px;
+        .reg-form{
+            margin-top: 5vh;
         }
     }
-}
 
+    .reg-con-t{
+        // border: solid 1px yellow;
+        height: 70vh;
+        width: 60%;
+        background: lighten(#f0f4c3, 10%);
+        position: relative;
+        overflow: hidden;
 
-@media(max-width: 1200px){
-    .register{
-        // margin-top: 0;
-        padding: 10px;;
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-    }
-    .register-form{
-        height: 20vh;
-        width: 90%;
-        padding: 0 50px 0 50px;
-    }
+        .wave {
+            position: absolute;
+            top: -75%;
+            left: 14%;
+            background: radial-gradient(rgb(255, 140, 140), rgb(135, 108, 255),);
+            width: 1000px;
+            height: 1025px; 
+            margin-left: -250px;
+            margin-top: -250px;
+            border-radius: 35%;
+            animation: drift 20s infinite linear;
+          }
 
-    .meta-data{
-        height: 50%;
-        width: 90%;;
-        // margin-bottom: 10vh;
-    }
-}
+          @keyframes drift {
+            from { transform: rotate(0deg); }
+            from { transform: rotate(360deg); }
+          }
+            }
 
-@media(max-width: 500px){
-    .register-form{
-        padding: 0 10px 0 10px;
-    }
-}
+            @media screen and (max-width: 1024px){
+              .reg-con-o{
+                width: 50%;
+              }
+        
+              .reg-con-t{
+                width: 50%;
+                .wave{
+                  top: 0%
+                }
+              }
+            }
 
-@media(min-width: 1202px){
-
-    .register-form{
-        margin-top: 10vh;
-        width: 35%;
-        padding: 20px;
-    }
-
-    .meta-data{
-        margin-top: 5.8%;
-        height: 64vh;
-        width: 65%;
-
-    }
-}
-
-@media(min-width: 1309px){
-    .meta-data{
-        margin-top: 5.8%;
-    }
-}
+            @media screen and (max-width: 630px){
+              .reg-con-o{
+                width: 90%;
+          
+              }
+              .reg-con-t{
+                display: none;
+                // width: 90%;
+              }
+            }
+          }
+          

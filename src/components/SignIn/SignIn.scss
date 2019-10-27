@@ -99,8 +99,30 @@
         }
     }
 
-
+    
 }
+        @media(max-width: 1024px){
+           
+        
+           .div-1{
+               width: 40%;
+           }
+        
+           .SignInForm{
+               height: 90vh;
+           }
+    
+           .signIn{
+               .box-2{
+                   .wave{
+                       top: 20%;
+                   }
+    
+               }
+           }
+        
+        }
+
 @media(min-width: 768px){
     .box-2{
         display: flex;
@@ -110,17 +132,6 @@
 }
 
 
-@media(max-width: 1024px){
-   
-
-   .div-1{
-       width: 40%;
-   }
-
-   .SignInForm{
-       height: 90vh;
-   }
-}
 
 @media(max-width: 414px){
     .div-1{
@@ -136,3 +147,4 @@
         display: none;
     }
 }
+
