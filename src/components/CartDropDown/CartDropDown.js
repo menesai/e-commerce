@@ -1,6 +1,6 @@
 import React from 'react'
 import './CartDropDown.scss'
-import {Card, Image, Button, Transition} from 'semantic-ui-react';
+import {Card, Button, Transition, Item, Divider} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import {selectCartItems} from '../../redux/cart/cart.selectors'
 import {createStructuredSelector} from 'reselect'
@@ -10,26 +10,38 @@ import {toggleCart} from '../../redux/cart/cartReducer'
 
 const CartDropDown = ({hidden, cartItems, itemCount, history,dispatch}) => {
     return (
-        <div className='cdd'>
+        <div className='cdd' >
             <Transition visible={hidden} animation='slide down' duration={500}>
-            <Card className='card-3'>
-                <Card.Content header={!itemCount ? 'Your cart is empty...': `you have ${itemCount} item in cart `} textAlign='center'/>
+            <Card fluid className='card-3'>
+                    <p className='cdd-title'>{!itemCount ? 'Your cart is empty...': `You have ${itemCount} items in your cart `}</p>
+                    <Divider></Divider>
                     {cartItems.map((el,i) =>{
                         return(
-                            <Card.Content key={i}>
-                                <Image floated='left' size='tiny' src={el.imageUrl}/>
-                                <Card.Header>{el.name}</Card.Header> 
-                                <Card.Meta textAlign='left'>${el.price}</Card.Meta>
-                                <Card.Meta>Qty: {el.quantity}</Card.Meta>
-                            </Card.Content>
+                            <div style={{paddingLeft: 10}} key={i}>
+                           <Item.Group unstackable relaxed>
+                            <Item>
+                                <Item.Image size='tiny' src={el.imageUrl}/>
+                                <Item.Content>
+                                    <Item.Header>{el.name}</Item.Header>
+                                    <Item.Extra>${el.price}</Item.Extra>
+                                    <Item.Extra>Qty: {el.quantity}</Item.Extra>
+                                </Item.Content>
+                            </Item>
+                                <Divider></Divider>
+                           </Item.Group> 
+                            </div>
                         )
                     })}
-                <Card.Content extra>
+                    <div className='chk-btn'>
+                <Item.Group relaxed>
+                    <Item>
                     {!itemCount? null : <Button onClick={() =>{
                         history.push('/checkout')
                         dispatch(toggleCart())
                     }} fluid>Go to Checkout</Button>}
-                </Card.Content>
+                    </Item>
+                </Item.Group>
+                    </div>
             </Card>
 
             </Transition>

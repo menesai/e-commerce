@@ -1,23 +1,35 @@
-.cdd{
-    display: flex;
-    flex-direction: row-reverse;
-    // width: 99%;
-    height: 55vh;
+.cdd{   
+    width: 50vh;
     position: absolute;
     z-index: 3;
     top:100%;
     right:.5%;
-    // border: solid 1px
     
     .chk-out{
        padding: 0px 5px 12px 5px;
-       border: solid 1px red;
-    //    height: 
-    //    margin-top: 5vh;
+    }
+
+    .cdd-title{
+        text-align: center;
+        padding: 20px 0 0 0;
+        font-size: 1.3em;
+
+    }
+
+    .chk-btn{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .ui.fluid.button, .ui.fluid.buttons {
+        width: 40vh;
     }
 }
 
 .card-3{
+    border: solid 3px red;
+    height: 60vh;
     overflow-y: auto; 
     overflow-x:hidden;
 }
@@ -28,4 +40,14 @@
 
   .card-3::-webkit-scrollbar {
     width: 8px;
+}
+
+
+@media(max-width: 500px){
+    .cdd{
+        display: flex;
+        justify-content: center;
+        width: 50vh;
+
+    }
 }

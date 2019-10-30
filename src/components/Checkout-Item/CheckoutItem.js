@@ -6,6 +6,7 @@ import {Table, Icon} from 'semantic-ui-react'
 const CheckoutItem = ({cartItem, removeItem, adjustItem, addItem}) => {
     const {name, imageUrl, price, quantity} =cartItem
     return (
+        // <div style={{height: 150}}>
         <Table.Row>
         <Table.Cell>
             <img style={{height:50, objectFit: 'contain'}} src={imageUrl} alt='item'/>
@@ -19,6 +20,7 @@ const CheckoutItem = ({cartItem, removeItem, adjustItem, addItem}) => {
         <Table.Cell>${price}.00</Table.Cell>
         <Table.Cell onClick={() => removeItem(cartItem)} selectable icon='trash'></Table.Cell>
     </Table.Row> 
+        // </div>
     )
 }
 
